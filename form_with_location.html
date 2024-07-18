@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Form with Location</title>
+  <script>
+    function getLocation() {
+      if (navigator.geolocation) {
+        navigator.geolocation.getCurrentPosition(showPosition);
+      } else {
+        alert("Geolocation is not supported by this browser.");
+      }
+    }
+
+    function showPosition(position) {
+      document.getElementById("latitude").value = position.coords.latitude;
+      document.getElementById("longitude").value = position.coords.longitude;
+    }
+
+    window.onload = function() {
+      getLocation();
+    };
+  </script>
+</head>
+<body>
+  <form action="https://forms.office.com/r/ys6kTi7E3E?origin=lprLink" method="post">
+    <input type="hidden" id="latitude" name="latitude">
+    <input type="hidden" id="longitude" name="longitude">
+    <iframe src="https://forms.office.com/Pages/ResponsePage.aspx?id=-y-am9dap0aV2Xp-Oh1_npyQhvv5t7BHrHtO6WsOetpURE8yRUpHR1IyVDJUUkc3V1o3SE5ROUpNRC4u&embed=true" width="640" height="480" frameborder="0" marginheight="0" marginwidth="0">Loading…</iframe>
+    <input type="submit" value="Submit">
+  </form>
+</body>
+</html>
